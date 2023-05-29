@@ -2,7 +2,7 @@ import csv                      # Importamos csv y platform
 import platform
 contador = [0, 0, 0, 0]
 if platform.system() == 'Windows':
-    filename = path + "\csv\\partidos.csv"           # Fix para linux
+    filename = ".\csv\votos.csv"           # Fix para linux
 elif platform.system() == 'Linux':
     filename = '../csv/votos.csv'
 
@@ -17,4 +17,7 @@ with open(filename, 'r') as votos:
                 contador[2] += 1
             case 4:
                 contador[3] += 1
-print(contador)
+print(f"Votos Presidente y vicepresidente: {contador[0]}")
+print(f"Votos Gobernador y vicegobernador: {contador[1]}")
+print(f"Votos Senadores: {contador[2]}")
+print(f"Votos Diputados: {contador[3]}")
