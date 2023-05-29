@@ -1,8 +1,8 @@
 
-![coocking](https://github.com/marcosvillar4/Etapa-2-/blob/main/COCOS.png)
+![coocking](https://github.com/francisco2002valles/etapa3/blob/main/COCOS.png)
 
 # Campeonato UADE Python 2023
-Programa desarrollado para el campeonato de python en la UADE 2023
+Programa desarrollado para el la etapa 3 del campeonato de python en la UADE 2023
 
 ## Acerca del Programa
 El programa permite almacenar datos acerca de las elecciones de manera persistente y organizada en archivos csv.
