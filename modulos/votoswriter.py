@@ -2,6 +2,7 @@ def csvfilewriter(path, resp):
     import csv
     import platform
     import modulos.regiones2 as reg
+    import modulos.countysort as cys
 
     votprov = []
 
@@ -28,7 +29,7 @@ def csvfilewriter(path, resp):
 
     header1 = ["ELECCIONES GENERALES 2023"]
     body1 = [f"Categoria: {cat}"]
-    body2 = ["N° De lista", "Partido politico", "Votos", "Porcentaje %"]
+    body2 = ["Nro De lista", "Partido politico", "Votos", "Porcentaje %"]
 
 
     with open (csvprov, "r", ) as provincias:
@@ -41,13 +42,13 @@ def csvfilewriter(path, resp):
             with open(csvfilereg, "w", ) as provwrite:
                 csvwriter = csv.writer(provwrite)
                 csvwriter.writerow([row[0]])
-                print(int(row[1]))
                 votprov = reg.region2(path,int(row[1]), resp)
-                print (votprov)
+                
+                cys.count(path, votprov)
                 csvwriter.writerow(header1)
                 csvwriter.writerow(body1)
                 csvwriter.writerow(body2)
-                csvwriter.writerow(votprov)
+                
                 
 
             
