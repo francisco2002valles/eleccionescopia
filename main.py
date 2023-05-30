@@ -9,7 +9,7 @@ path = os.path.dirname(__file__)
 
 resp = int(menu.menu(path))
 
-cont1, cont2, cont3, cont4, conttotal= votos.contvotos(path)
+cont1, cont2, cont3, cont4, contotal, contblanco = votos.contvotos(path)
 if resp == 1:
     print(cont1)
     cat = "presidente"
