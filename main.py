@@ -1,5 +1,4 @@
 import os
-import platform
 import modulos.menu as menu
 import modulos.votos as votos
 
