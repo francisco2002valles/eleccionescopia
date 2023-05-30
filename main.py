@@ -47,6 +47,8 @@ try:
 except:
     
     votoswriter.csvfilewriter(path, resp)
+print("CSV generado en csv/csv_regiones/")
+input("Presione cualquier tecla para cerrar")
 
 
 
