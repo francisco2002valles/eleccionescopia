@@ -9,3 +9,5 @@ El programa permite ver el resultado de los sufragios cargados anteriormente.
 
 ### Como correr el programa?
 1. Ejecutar main.py
+2. Ingrese el tipo de resultados que desea ver
+3. lea los resultados en la carpeta correspondiente al csv
