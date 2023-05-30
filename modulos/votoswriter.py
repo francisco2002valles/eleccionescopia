@@ -45,7 +45,7 @@ def csvfilewriter(path, resp):
                 csvwriter.writerow([row[0]])
                 votprov = reg.region2(path,int(row[1]), resp)
                 listorden = cys.count(path, votprov)
-                votos, votosblanco = formato.formato(path, listorden)
+                votos, votosblanco, votostotal = formato.formato(path, listorden)
                 
                 csvwriter.writerow(header1)
                 csvwriter.writerow(body1)
@@ -53,6 +53,9 @@ def csvfilewriter(path, resp):
 
                 csvwriter.writerows(votos)
                 csvwriter.writerow([f"Votos en blanco: {votosblanco}"])
+                csvwriter.writerow([f"Votos positivos: {votostotal - votosblanco}"])
+                csvwriter.writerow([f"Votos totales: {votostotal}"])
+                
                 
                 
 
