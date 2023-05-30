@@ -1,6 +1,7 @@
 def formato(path, orden):
     import platform
     import csv
+    import modulos.porcent2 as porc
     if platform.system() == 'Windows':
         csvfile = path + "\csv\\partidos.csv"           # Fix para linux
     elif platform.system() == 'Linux':
@@ -14,10 +15,14 @@ def formato(path, orden):
         return lista[0]
 
     def segundo_item(lista):
-        return lista[1]    
+        return lista[1]
+
+    for item in range(0, len(orden)):
+        votostotal = votostotal + segundo_item(orden[item])   
+
+
     for item in range(0, len(orden)):
         temp.append(primer_item(orden[item]))
-        
         with open (csvfile, "r") as partidos:
             reader = csv.reader(partidos)
             for row in reader:
@@ -29,10 +34,15 @@ def formato(path, orden):
             votosblanco = segundo_item(orden[item])
         if primer_item(orden[item]) != 0:
             temp.append(nombre)
-            temp.append(segundo_item(orden[item]))    
+            temp.append(segundo_item(orden[item]))
+            if segundo_item(orden[item]) != 0:
+                porcentaje = porc.porcent(segundo_item(orden[item]), votostotal)
+                temp.append(porcentaje)    
             final.append(temp)
+            print
+        
 
-        votostotal = votostotal + segundo_item(orden[item])
+        
         
         temp = []
 

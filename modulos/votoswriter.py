@@ -4,9 +4,10 @@ def csvfilewriter(path, resp):
     import modulos.regiones2 as reg
     import modulos.countysort as cys
     import modulos.formato as formato
+    import modulos.porcent2 as porc
 
     votprov = []
-    
+    acuvotos = 0
 
     if platform.system() == 'Windows':
         csvfile = path + ("\csv\\")             # Fix para windows y linux
@@ -51,11 +52,20 @@ def csvfilewriter(path, resp):
                 csvwriter.writerow(header1)
                 csvwriter.writerow(body1)
                 csvwriter.writerow(body2)
-
+                acuvotos = acuvotos + votostotal
                 csvwriter.writerows(votos)
-                csvwriter.writerow([f"Votos en blanco: {votosblanco}"])
-                csvwriter.writerow([f"Votos positivos: {votostotal - votosblanco}"])
-                csvwriter.writerow([f"Votos totales: {votostotal}"])
+                if votostotal != 0:
+                                        
+                    porcblanco = porc.porcent(votosblanco,votostotal)
+                    csvwriter.writerow([f"Votos en blanco: {votosblanco}",f" porcentaje % : {porcblanco}"])
+                    porcpositivo = porc.porcent(votostotal - votosblanco,votostotal)
+                    csvwriter.writerow([f"Votos positivos: {votostotal - votosblanco}",f" porcentaje % : {porcpositivo}"])
+
+                    csvwriter.writerow([f"Votos totales: {votostotal}"])
+
+                    porctotal = porc.porcent(votostotal, acuvotos)
+                    csvwriter.writerow([f"Porcentaje de votos comparado a todas las provincias: {porctotal}"])
+
                 
                 
                 
