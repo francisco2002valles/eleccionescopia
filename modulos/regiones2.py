@@ -1,4 +1,4 @@
-def region2(path, region):
+def region2(path, region, resp):
     import platform
     import csv
 
@@ -14,7 +14,7 @@ def region2(path, region):
     with open (csvfile, "r") as votos:
         csvreader = csv.reader(votos)
         for row in csvreader:
-            if region == int(row[1]):
+            if region == int(row[1]) and resp == int(row[2]):
                 votprov.append(row[3])
                 
     return votprov

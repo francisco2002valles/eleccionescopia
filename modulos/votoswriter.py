@@ -42,7 +42,7 @@ def csvfilewriter(path, resp):
                 csvwriter = csv.writer(provwrite)
                 csvwriter.writerow([row[0]])
                 print(int(row[1]))
-                votprov = reg.region2(path,int(row[1]))
+                votprov = reg.region2(path,int(row[1]), resp)
                 print (votprov)
                 csvwriter.writerow(header1)
                 csvwriter.writerow(body1)
