@@ -6,6 +6,7 @@ def csvfilewriter(path, resp):
     import modulos.formato as formato
 
     votprov = []
+    
 
     if platform.system() == 'Windows':
         csvfile = path + ("\csv\\")             # Fix para windows y linux
