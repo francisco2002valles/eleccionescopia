@@ -30,7 +30,7 @@ def csvfilewriter(path, resp):
 
     header1 = ["ELECCIONES GENERALES 2023"]
     body1 = [f"Categoria: {cat}"]
-    body2 = ["Nro De lista", "Partido politico", "Votos", "Porcentaje %"]
+    body2 = ["Nro De lista", " Partido politico", " Votos", " Porcentaje % "]
 
 
     with open (csvprov, "r", ) as provincias:

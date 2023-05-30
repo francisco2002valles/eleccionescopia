@@ -22,6 +22,7 @@ def formato(path, orden):
             for row in reader:
                 if primer_item(orden[item]) == int(row[2]):
                     nombre = row[0]
+            
                     
 
         temp.append(nombre)
