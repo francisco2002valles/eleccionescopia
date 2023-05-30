@@ -33,7 +33,7 @@ def count(path, votprov):
             temp = temp - 1
         else:
             pos = pos + 1
-    print(orden)
+    
     return orden
     
     

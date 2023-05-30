@@ -3,6 +3,7 @@ def csvfilewriter(path, resp):
     import platform
     import modulos.regiones2 as reg
     import modulos.countysort as cys
+    import modulos.formato as formato
 
     votprov = []
 
@@ -43,11 +44,14 @@ def csvfilewriter(path, resp):
                 csvwriter = csv.writer(provwrite)
                 csvwriter.writerow([row[0]])
                 votprov = reg.region2(path,int(row[1]), resp)
+                listorden = cys.count(path, votprov)
+                votos = formato.formato(path, listorden)
                 
-                cys.count(path, votprov)
                 csvwriter.writerow(header1)
                 csvwriter.writerow(body1)
                 csvwriter.writerow(body2)
+
+                csvwriter.writerows(votos)
                 
                 
 
