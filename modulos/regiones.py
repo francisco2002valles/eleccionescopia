@@ -16,7 +16,7 @@ def region(path):
             claseslist.append(int(row[1]))
             match int(row[1]):
                 case 1:
-                   ciudad_a_bsas = [] 
+                   ciudad_de_bsas = [] 
                 case 2:
                     bs_as = []
                 case 3:
