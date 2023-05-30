@@ -7,13 +7,13 @@ def contvotos(path):
     elif platform.system() == 'Linux':
         csvfile = path + '/csv/votos.csv'
 
-    votos = "votos.csv"
+    
     cont1 = 0
     cont2 = 0
     cont3 = 0
     cont4 = 0
 
-    with open(votos, "r") as archivo:
+    with open(csvfile, "r") as archivo:
         reader = csv.reader(archivo, delimiter=",")
         for row in reader:
             clase_votos = int(row[2])
