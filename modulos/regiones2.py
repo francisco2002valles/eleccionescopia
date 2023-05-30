@@ -1,11 +1,10 @@
-def region2(region):
+def region2(path, region):
     import platform
-    import os
     import csv
 
-    votoprov = []
+    votprov = []
 
-    path = os.path.dirname(__file__)
+    
 
     if platform.system() == 'Windows':
         csvfile = path + "\csv\\votos.csv"           # Fix para linux
@@ -15,6 +14,7 @@ def region2(region):
     with open (csvfile, "r") as votos:
         csvreader = csv.reader(votos)
         for row in csvreader:
-            if region == row[1]:
-                votoprov.append(row[3])
-
+            if region == int(row[1]):
+                votprov.append(row[3])
+                
+    return votprov

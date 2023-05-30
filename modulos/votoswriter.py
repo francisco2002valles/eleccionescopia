@@ -1,9 +1,9 @@
 def csvfilewriter(path, resp):
     import csv
     import platform
+    import modulos.regiones2 as reg
 
-    header1 = ["ELECCIONES GENERALES 2023"]
-    body1 = [f"Categoria: {cat}"]
+    votprov = []
 
     if platform.system() == 'Windows':
         csvfile = path + ("\csv\\")             # Fix para windows y linux
@@ -26,7 +26,8 @@ def csvfilewriter(path, resp):
 
     csvprov = csvfile + "provincias.csv"
 
-    
+    header1 = ["ELECCIONES GENERALES 2023"]
+    body1 = [f"Categoria: {cat}"]
 
 
     with open (csvprov, "r", ) as provincias:
@@ -39,9 +40,14 @@ def csvfilewriter(path, resp):
             with open(csvfilereg, "w", ) as provwrite:
                 csvwriter = csv.writer(provwrite)
                 csvwriter.writerow([row[0]])
+                print(int(row[1]))
+                votprov = reg.region2(path,int(row[1]))
+                print (votprov)
                 csvwriter.writerow(header1)
                 csvwriter.writerow(body1)
+                csvwriter.writerow(votprov)
                 
+
             
     
             

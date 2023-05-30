@@ -3,6 +3,7 @@ import modulos.menu as menu
 import modulos.votos as votos
 import modulos.votoswriter as votoswriter
 import modulos.regiones as region
+import modulos.regiones2 as region2
 
 path = os.path.dirname(__file__)
 
