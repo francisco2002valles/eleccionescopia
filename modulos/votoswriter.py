@@ -3,6 +3,7 @@ def csvfilewriter(path, resp):
     import platform
 
     header1 = ["ELECCIONES GENERALES 2023"]
+    body1 = [f"Categoria: {cat}"]
 
     if platform.system() == 'Windows':
         csvfile = path + ("\csv\\")             # Fix para windows y linux
@@ -39,6 +40,8 @@ def csvfilewriter(path, resp):
                 csvwriter = csv.writer(provwrite)
                 csvwriter.writerow([row[0]])
                 csvwriter.writerow(header1)
+                csvwriter.writerow(body1)
+                
             
     
             
