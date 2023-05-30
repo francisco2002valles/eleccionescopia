@@ -28,7 +28,16 @@ if platform.system() == 'Windows':
 elif platform.system() == 'Linux':
     dirloc = path + f'/csv/csv_regiones/{cat}'
 
-os.mkdir(dirloc, mode=0o777)
+if platform.system() == 'Windows':
+    dirloc1 = path + f"\csv\\csv_regiones"           # Fix para linux
+elif platform.system() == 'Linux':
+    dirloc1 = path + f'/csv/csv_regiones'
+
+try:
+    os.mkdir(dirloc1, mode=0o777)
+    
+except:
+    print("")
 
 try:
     os.mkdir(dirloc, mode=0o777)
