@@ -18,7 +18,7 @@ elif resp == 2:
     cat = "gobernador"
 elif resp == 3:
     print(cont3)
-    cat = "diputados"
+    cat = "diputado"
 elif resp == 4:
     print(cont4)
     cat = "senadores"

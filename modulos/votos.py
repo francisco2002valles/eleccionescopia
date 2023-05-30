@@ -14,17 +14,17 @@ def contvotos(path):
         csvfile = path + '/csv/votos.csv'
 
         with open(csvfile, "r") as archivo:
-            reader = csv.reader(archivo, delimiter=",")
-        for row in reader:
-            clase_votos = int(row[2])
-            conttotal = conttotal + 1
-            if clase_votos == 1:
-                cont1 = cont1 + 1
-            if clase_votos == 2:
-                cont2 = cont2 + 1
-            if clase_votos == 3:
-                cont3 = cont3 + 1
-            if clase_votos == 4:
-                cont4 = cont4 + 1
+            reader = csv.reader(archivo)
+            for row in reader:
+                clase_votos = int(row[2])
+                conttotal = conttotal + 1
+                if clase_votos == 1:
+                    cont1 = cont1 + 1
+                if clase_votos == 2:
+                    cont2 = cont2 + 1
+                if clase_votos == 3:
+                    cont3 = cont3 + 1
+                if clase_votos == 4:
+                    cont4 = cont4 + 1
     
     return cont1, cont2, cont3, cont4, conttotal
