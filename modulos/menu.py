@@ -2,14 +2,14 @@ def menu(path):
     import csv                      # Importamos csv y platform 
     import platform
 
-    claseslist = []                   # Creamos una lista para todos los partidos
+    claseslist = []                   # Creamos una lista para todos las clases
 
     if platform.system() == 'Windows':
         csvfile = path + "\csv\\clases.csv"           # Fix para linux
     elif platform.system() == 'Linux':
         csvfile = path + '/csv/clases.csv'
 
-    with open (csvfile, "r", ) as partidos:             # Leemos el archivo partidos.csv para la lista de partidos
+    with open (csvfile, "r", ) as partidos:             # Leemos el archivo clases.csv para la lista de clases
         reader = csv.reader(partidos)
         for row in reader:
             print(row)
@@ -19,11 +19,11 @@ def menu(path):
     valido = False
     while valido != True:                           # Chequeamos que el valor sea valido
         try:
-            resp = int(input("ID: "))               # Chequeamos que el valor sea un numero
+            resp = int(input(": "))               # Chequeamos que el valor sea un numero
         except: 
             valido = False
         try:
-            claseslist.index(resp)                # Buscamos el valor en la lista de partidos
+            claseslist.index(resp)                # Buscamos el valor en la lista de clases
             valido = True
         except:
             valido = False
