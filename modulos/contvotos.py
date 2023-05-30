@@ -2,7 +2,7 @@ import csv                      # Importamos csv y platform
 import platform
 contador = [0, 0, 0, 0]
 if platform.system() == 'Windows':
-    filename = ".\csv\votos.csv"           # Fix para linux
+    filename = ".\csv\\votos.csv"           # Fix para linux
 elif platform.system() == 'Linux':
     filename = '../csv/votos.csv'
 
