@@ -8,7 +8,7 @@ def formato(path, orden):
     temp = []
     final = []
     nombre = ""
-    
+    votosblanco = 0
     def primer_item(lista):
         return lista[0]
 
@@ -23,8 +23,10 @@ def formato(path, orden):
                 if primer_item(orden[item]) == int(row[2]):
                     nombre = row[0]
             
-                    
-
+        if primer_item(orden[item]) == 0:
+            temp = []
+            votosblanco = segundo_item(orden[item])
+        
         temp.append(nombre)
         temp.append(segundo_item(orden[item]))    
         final.append(temp)
@@ -32,7 +34,7 @@ def formato(path, orden):
         
         temp = []
 
-    return final
+    return final, votosblanco
 
     
     
