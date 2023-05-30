@@ -3,7 +3,6 @@ import modulos.menu as menu
 import modulos.votos as votos
 import modulos.votoswriter as votoswriter
 
-
 path = os.path.dirname(__file__)
 
 resp = int(menu.menu(path))
