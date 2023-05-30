@@ -13,7 +13,7 @@ def menu(path):
         reader = csv.reader(partidos)
         for row in reader:
             print(row)
-            claseslist.append(int(row[2]))
+            claseslist.append(int(row[1]))
     
     print("Seleccione que resultado desea ver: ")
     valido = False
