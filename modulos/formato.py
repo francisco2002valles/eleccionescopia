@@ -9,6 +9,7 @@ def formato(path, orden):
     final = []
     nombre = ""
     votosblanco = 0
+    votostotal = 0
     def primer_item(lista):
         return lista[0]
 
@@ -26,15 +27,16 @@ def formato(path, orden):
         if primer_item(orden[item]) == 0:
             temp = []
             votosblanco = segundo_item(orden[item])
-        
-        temp.append(nombre)
-        temp.append(segundo_item(orden[item]))    
-        final.append(temp)
+        if primer_item(orden[item]) != 0:
+            temp.append(nombre)
+            temp.append(segundo_item(orden[item]))    
+            final.append(temp)
 
+        votostotal = votostotal + segundo_item(orden[item])
         
         temp = []
 
-    return final, votosblanco
+    return final, votosblanco, votostotal
 
     
     
