@@ -9,8 +9,3 @@ El programa permite ver el resultado de los sufragios cargados anteriormente.
 
 ### Como correr el programa?
 1. Ejecutar main.py
-2. 
-3. 
-4. 
-5. 
-6. 
