@@ -7,12 +7,19 @@ def contvotos(path):
     elif platform.system() == 'Linux':
         csvfile = path + '/csv/votos.csv'
 
-   
+    contblanco = 0 
     cont1 = 0
     cont2 = 0
     cont3 = 0
     cont4 = 0
     conttotal = 0
+
+    with open(csvfile, "r") as archivo:
+        reader = csv.reader(archivo, delimiter=",")
+        for row in reader:
+            clase_votosblanco = int(row[3])
+            if clase_votosblanco == 000:
+                contblanco = contblanco + 1
 
     with open(csvfile, "r") as archivo:
         reader = csv.reader(archivo, delimiter=",")
@@ -28,4 +35,4 @@ def contvotos(path):
             if clase_votos == 4:
                 cont4 = cont4 + 1
     
-    return cont1, cont2, cont3, cont4, conttotal
+    return cont1, cont2, cont3, cont4, conttotal, contblanco
