@@ -22,6 +22,7 @@ def count(path, votprov):
 
     for item in range(0, len(partid)):
         desorden.append([int(partid[item]),votprov.count(partid[item])])
+        
     
     orden = sorted(desorden, key=segundo_item, reverse=True)
     pos = 0
