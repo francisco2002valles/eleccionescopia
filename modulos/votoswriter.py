@@ -10,18 +10,18 @@ def csvfilewriter(path, resp):
         csvfile = path + '/csv/'
 
     if resp == 1:
-        cat = "presidente_"
+        cat = "presidente"
     if resp == 2:
-        cat = "gobernador_"
+        cat = "gobernador"
     if resp == 3:
-        cat = "diputado_"
+        cat = "diputado"
     if resp == 4:
-        cat = "senadores_"
+        cat = "senadores"
 
     if platform.system() == 'Windows':
-        csvfile2 = path + ("\csv\\csv_regiones\csv_" + cat)             # Fix para windows y linux
+        csvfile2 = path + f"\csv\\csv_regiones\{cat}\csv_"             # Fix para windows y linux
     elif platform.system() == 'Linux':
-        csvfile2 = path + '/csv/csv_regiones/csv_' + cat
+        csvfile2 = path + f'/csv/csv_regiones/{cat}/csv_'
 
     csvprov = csvfile + "provincias.csv"
 
@@ -33,7 +33,7 @@ def csvfilewriter(path, resp):
         for row in csvreader:
             rowactual = str.casefold(row[0])
             rowactual = rowactual.replace(" ", "_")
-            csvfilereg = (csvfile2 + rowactual + ".csv")
+            csvfilereg = (csvfile2 + rowactual + f"{cat}.csv")
             
             with open(csvfilereg, "w", ) as provwrite:
                 csvwriter = csv.writer(provwrite)
